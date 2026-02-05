@@ -7,11 +7,19 @@
     <link rel="stylesheet"
      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+            :root {
+            --blue-main: #2563eb;   /* xanh chính */
+            --blue-dark: #1e40af;   /* xanh đậm */
+            --blue-light: #60a5fa;  /* xanh hover */
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
         body {
             margin: 0;
             padding: 20px;
             font-family: "Segoe UI", Arial, sans-serif;
-            background: linear-gradient(135deg, #1d2671, #c33764);
+            background: #1e3a8a;
         }
         
 
@@ -35,6 +43,9 @@
             border: 1px solid #ccc;
             resize: vertical;
             outline: none;
+
+            display: block;      /* ⭐ bonus 1 */
+            margin-bottom: 10px; /* ⭐ bonus 2 */
         }
 
         textarea:focus {
@@ -50,18 +61,31 @@
             border-radius: 10px;
             cursor: pointer;
             color: white;
-            background: linear-gradient(135deg, #c33764, #1d2671);
-            transition: transform 0.15s, box-shadow 0.15s;
+
+            background: linear-gradient(
+                135deg,
+                var(--blue-main),
+                var(--blue-dark)
+            );
+
+            transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
         }
 
         button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+            box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
+            background: linear-gradient(
+                135deg,
+                var(--blue-light),
+                var(--blue-main)
+            );
         }
 
         button:active {
             transform: scale(0.97);
         }
+
+        
 
 
         .controls {
